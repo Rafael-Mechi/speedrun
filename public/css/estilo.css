@@ -55,6 +55,20 @@ body {
   font-weight: 500;
 }
 
+.titulo::before {
+  content: '';
+  display: inline-block;
+
+  background-image: url('../assets/icon/logo-focus.png');
+  background-position: center;
+  background-size: cover;
+
+  vertical-align: middle;
+
+  height: 4vh;
+  width: 5vh;
+}
+
 .header h1 {
   margin: 0;
 }
