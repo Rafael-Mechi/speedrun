@@ -1,0 +1,279 @@
+/* fontes importadas para a página */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/*define características básicas do corpo da página*/
+body {
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+
+    overflow-x: hidden;
+}
+
+/*define o tamanho do cabeçalho, rodapé e banner, para que um não sobreponha o outro*/
+:root {
+
+    --tamanho-header: 80px;
+}
+
+/*CSS do Título para adicionar a logo*/
+.titulo-gas-busters {
+
+    margin-left: -3vh;
+    color: #ffff;
+
+    font-size: 3vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo-focus::before {
+    content: '';
+    display: inline-block;
+    background-image: url('../imagens/logo-focus.png');
+    background-position: center;
+    background-size: cover;
+    vertical-align: middle;
+    height: 7vh;
+    width: 6vw;
+}
+
+
+
+
+.titulo-gas-busters:hover {
+    transform: scale(1.1);
+}
+
+/* Cabeçalho com uma largura de 100%, tendo sua animação de sumiço ao subir ao topo da página */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9vh;
+    z-index: 1000;
+    /* fica na frente de outros elementos */
+    transition: 0.5s;
+    /* efeito ao voltar para o topo */
+    box-shadow: 0 0.1vh 5vh rgb(0, 1, 5);
+
+}
+
+
+/*compartimento para os itens*/
+.container {
+
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+
+/*compartimento do cabeçalho*/
+.header .container {
+
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+}
+
+/*itens do cabeçaalho para navegação*/
+.navbar {
+
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+/*cor dos itens da navbar*/
+.navbar .a {
+    color: #ffffff;
+
+}
+
+/*remover o sublinhado*/
+.header a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header a:hover {
+    color: #402721;
+}
+
+/*negrito no presente navbar*/
+.agora .a {
+    font-weight: 800;
+    color: #D9C3B0;
+
+}
+
+.agora .a:hover {
+
+    color: #402721;
+
+}
+
+/*Corpo das páginas Login/Cadastro*/
+.corpo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #cca684 0%, #6b3e2e 50%, #301b16 100%);
+}
+
+.corpo .container {
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    width: 85%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.formulario {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffff;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.formulario h2 {
+    margin: 0;
+    font-size: 35px;
+    color: #402721;
+}
+
+.formulario .campo {
+    width: 60%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.formulario span {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #402721;
+}
+
+.formulario button {
+    width: 20%;
+    height: 4vh;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 800;
+    background-color: #D9C3B0;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.formulario button:hover {
+    cursor: pointer;
+    background-color: #402721;
+    color: wheat;
+
+}
+
+.login {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .campo {
+    height: 20%;
+
+    margin: 15px;
+}
+
+.campo input {
+    width: 100%;
+    height: 50%;
+}
+
+.card-imagem {
+    width: 50%;
+    height: 100%;
+    background-image: url('../imagens/imagem-login.png');
+    filter: brightness(0.8);
+    background-size: cover;
+    background-position: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+/*LOADING CARD*/
+.loading-div {
+    width: 50px;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+#div_erros_login {
+    display: none
+}
+
+
+
+/*CARDS DE ERRO*/
+.alerta_erro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #ED145B 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+
